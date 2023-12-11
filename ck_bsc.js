@@ -28,7 +28,7 @@ try {
             var iterator = dataLayer[i];
             console.log('iterator : ',iterator)
             if (iterator.event == 'tp_purchase') {
-                ck_order_id = iterator.ecommerce.order_number;
+                // ck_order_id = iterator.ecommerce.order_number;
                 for (var j = 0; j < iterator.ecommerce.items.length; j++) {
                     var item_obj = iterator.ecommerce.items[j];
                     console.log('item_obj : ',item_obj)
