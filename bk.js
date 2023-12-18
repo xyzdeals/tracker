@@ -62,11 +62,12 @@ try {
             });
         }
 
+        console.log('ck_item_array ',ck_item_array)
         function ckPostback(data) {
             if (data && data.ck_clickid && ck_order_id) {
                 if (ck_item_array && ck_item_array.length > 0) {
                     for (let index = 0; index < ck_item_array.length; index++) {
-                        const element = array[index];
+                        const element = ck_item_array[index];
                         let ck_goal = ''
                         if (ck_specific_list.includes(parseInt(element.platform_product_id))) {
                             ck_goal = 'specific-'
