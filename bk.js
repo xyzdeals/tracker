@@ -7,8 +7,15 @@ try {
         // var ck_order_count ={% if customer.orders_count == 1 %}1{% else %}2{% endif %} ;
         // var ck_specific_list =['abc','cde'];
 
-        // var ck_item_array = [] define this array and push dlEvent array
-        // ck_item_array.push(objOrderLines)
+        var ck_item_array = []
+        
+        for (var i = 0; i < dataLayer.length; i++) {
+            var iterator = dataLayer[i];
+            console.log('iterator : ',iterator)
+            if (iterator.event == 'purchase') {
+                ck_item_array = iterator.ecommerce.items
+            }
+        }
 
         var count = localStorage.getItem('ck_count') ? parseInt(localStorage.getItem('ck_count')) : 0;
         var ckSurvivalDays = 7;
