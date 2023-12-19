@@ -72,7 +72,8 @@ try {
                         if (ck_specific_list.includes(parseInt(element.platform_product_id))) {
                             ck_goal = 'specific-'
                         }
-                        var url = 'https://offers-cashkaro.affise.com/postback?clickid=' + data.ck_clickid + '&secure=' + ck_secure_code + '&action_id=' + ck_order_id + '_' + (index + 1) + '&sum=' + element.buykaro_price + '&status=2&custom_field1=' + element.price + '&custom_field2=' + data.ck_utm_campaign + '&custom_field3=' + ck_discount_code + '&custom_field4=' + element.item_category + '&custom_field5=' + element.item_name + '&custom_field6=' + element.item_quantity + '&custom_field7=' + element.item_id + '_' + element.platform_product_id + '_' + element.platform_variant_id + '&goal=' + ck_goal + element.item_brand;
+                        let current_offer_index = index + 1
+                        var url = 'https://offers-cashkaro.affise.com/postback?clickid=' + data.ck_clickid + '&secure=' + ck_secure_code + '&action_id=' + ck_order_id + '_' + current_offer_index + '&sum=' + element.buykaro_price + '&status=2&custom_field1=' + element.price + '&custom_field2=' + data.ck_utm_campaign + '&custom_field3=' + ck_discount_code + '&custom_field4=' + element.item_category + '&custom_field5=' + element.item_name + '&custom_field6=' + element.item_quantity + '&custom_field7=' + element.item_id + '_' + element.platform_product_id + '_' + element.platform_variant_id + '&goal=' + ck_goal + element.item_brand;
                         fetch(url)
                             .then(function (response) {
                                 return response.json();
